@@ -42,6 +42,36 @@ People who want to learn typing, increase typing speed, and improve the literacy
 
 ### Summary of Classes, Attributes and Associations
 
+Player:
+
+* username (attribute)
+* wpm (attribute)
+* accuracy (attribute)
+* clearHistory (method)
+
+ParagraphManager:
+
+* add (method)
+* delete (method)
+* reorder (method)
+* generate (method, maybe use APIs)
+
+WordSetManager:
+
+* add (method)
+* delete (method)
+* reorder (method)
+
+Text:
+
+* content (attribute)
+
+History:
+
+* time (attribute)
+* accuracy (attribute)
+* clear (method)
+
 ## User stories
 
 * **Tech vs Non-Tech**
@@ -56,7 +86,7 @@ People who want to learn typing, increase typing speed, and improve the literacy
 
 **Tech & Seniors:** Usher is a 60-year-old retired software developer, who always has passion for technology. He is looking for ways to keep mentally sharp and avoid Alzheimer's disease. He doesn’t have the energy to dive deep into the latest skills anymore, but he thinks typing, one thing he has been doing for more than 40 years, is a good idea. **As a typing master, Usher wants to upload some literature text to FlashFingers and type them, because this way, he not only keeps typing, but he can be also able to enjoy some literary works that he had no time to read before.**
 
-**Non-Tech & Seniors:** Linda is a 55-year-old retiree who was a gardener and has never been much interested in technology. She only uses basic cell phone and occasionally browses the internet on a desktop computer. But recently her son went to college in another state, and she wants to practice typing so that he could send emails and messages to her son. As a computer novice and a mother who misses her son, Linda wants to use FlashFingers to cultivate the typing skill, because it is a game after all that she can practice in a stress-free environment.
+**Non-Tech & Seniors:** Linda is a 55-year-old retiree who was a gardener and has never been much interested in technology. She only uses basic cell phone and occasionally browses the internet on a desktop computer. But recently her son went to college in another state, and she wants to practice typing so that he could send emails and messages to her son. **As a computer novice and a mother who misses her son, Linda wants to use FlashFingers to cultivate the typing skill, because it is a game after all that she can practice in a stress-free environment.**
 
 ## Interface low level mockups
 
