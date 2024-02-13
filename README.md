@@ -93,9 +93,28 @@ History:
 
 ## Interface low level mockups
 
+The index page is a new game, which naturally encourage players to start trying this game.
+
+The left-top is the name or logo of the game, and the right-top is basic info of the player.
+
+Players can go to differect page by the navigator (Game / Upload / History).
+
+In the main section, players will type based on the given text. If they type in letters correctly, text color will become green, otherwise, red.
+
 ![](./designImg/Game.jpg)
+
+After they type in all the text correctly, the game ends, and a congratulation message shows.
+
+This massage will disappear in 3 seconds automatically, and the next game starts.
+
 ![](./designImg/FinishGame.jpg)
+
+In the upload page, players can inpu their own content, or upload their files by clicking the "choose file" button.
+
 ![](./designImg/Upload.jpg)
+
+In the history page, players can browse their game records, and they can also play a game again.
+
 ![](./designImg/History.jpg)
 
 ## UML Class Diagram
