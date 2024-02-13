@@ -66,11 +66,14 @@ Text:
 
 * content (attribute)
 
+HistoryManager:
+
+* clear (method)
+
 History:
 
 * time (attribute)
 * accuracy (attribute)
-* clear (method)
 
 ## User stories
 
@@ -91,3 +94,5 @@ History:
 ## Interface low level mockups
 
 ## UML Class Diagram
+
+![](classUML.jpg)
