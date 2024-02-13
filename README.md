@@ -93,6 +93,11 @@ History:
 
 ## Interface low level mockups
 
+![](./designImg/Game.jpg)
+![](./designImg/FinishGame.jpg)
+![](./designImg/Upload.jpg)
+![](./designImg/History.jpg)
+
 ## UML Class Diagram
 
-![](classUML.jpg)
+![](./designImg/classUML.jpg)
