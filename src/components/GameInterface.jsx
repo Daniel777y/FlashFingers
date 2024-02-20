@@ -1,15 +1,26 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import '../styles/GameInterface.css';
+import "../styles/GameInterface.css";
+import rightSound from "../assets/right.mp3";
+import wrondSound from "../assets/wrong.mp3";
 
 export default class GameInterface extends Component {
-  inputRef = React.createRef();
   constructor(props) {
     super(props);
-    this.state = {
-      userInput: '',
-    };
+    this.inputRef = React.createRef();
+    this.rightAudio = new Audio(rightSound);
+    this.wrongAudio = new Audio(wrondSound);
   }
+  // if current key matches the next character, play the right sound,
+  // otherwise play the wrong sound.
+  handleKeyPress = (e) => {
+    const idx = e.target.value.length;
+    if (idx < this.props.game.text.content.length && e.key === this.props.game.text.content[idx]) {
+      this.rightAudio.play();
+    } else {
+      this.wrongAudio.play();
+    }
+  };
   handleInputChange = (e) => {
     this.props.onInputChange(e.target.value);
   }
@@ -40,6 +51,7 @@ export default class GameInterface extends Component {
           className="game-input"
           ref={this.inputRef}
           onChange={this.handleInputChange}
+          onKeyPress={this.handleKeyPress}
           value={this.props.game.userInput}
 					maxLength={this.props.game.text.content.length}
           autoFocus
