@@ -1,6 +1,8 @@
+import getId from "../utils/idGenerator.js"
+
 export default class Game {
   constructor(text) {
-    this.id = Date.now();
+    this.id = getId();
     this.text = text;
     this.wpm = 0;
     this.pressCnt = 0;

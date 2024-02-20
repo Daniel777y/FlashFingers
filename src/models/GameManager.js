@@ -12,12 +12,34 @@ export default class GameManager {
     return newGame;
   }
   processInput(game, input) {
-    game.userInput = input;
-    if (!game.completed) {
-      game.accuracy = this.calcAccuracy(game.pressCnt, game.errorCnt);
-      game.wpm = this.calcWPM(game.startTime, game.userInput);
-    }
-    return game;
+    const originalInput = game.userInput;
+    //newGame.userInput = input;
+    //if (newGame.userInput.length > game.userInput.length) {
+    //  newGame.pressCnt += 1;
+    //  const len = newGame.userInput.length;
+    //  if (newGame.userInput[len - 1] !== newGame.text.content[len - 1]) {
+    //    newGame.errorCnt += 1;
+    //  }
+    //}
+    //if (!newGame.completed) {
+    //  newGame.accuracy = this.calcAccuracy(newGame.pressCnt, newGame.errorCnt);
+    //  newGame.wpm = this.calcWPM(newGame.startTime, newGame.userInput);
+    //}
+    const inputLen = input.length;
+    const pressCnt = (input.length > originalInput.length ? game.pressCnt + 1 : game.pressCnt);
+    const errorCnt = (input.length > originalInput.length && input[inputLen - 1] !== game.text.content[inputLen - 1] ? game.errorCnt + 1 : game.errorCnt);
+    const accuracy = this.calcAccuracy(pressCnt, errorCnt);
+    const wpm = this.calcWPM(game.startTime, input);
+    const newGame = {
+      ...game,
+      userInput: input,
+      pressCnt,
+      errorCnt,
+      accuracy,
+      wpm,
+    };
+    console.log(newGame.pressCnt, newGame.errorCnt);
+    return newGame;
   }
   isCompleted(game) {
     return game.userInput === game.text.content;
@@ -25,6 +47,7 @@ export default class GameManager {
   endGame(game) {
     game.endTime = Date.now();
     game.completed = true;
+    console.log(game.wpm, game.accuracy);
   }
   calcWPM(startTime, input) {
     const currentTime = Date.now();
@@ -34,6 +57,6 @@ export default class GameManager {
     return wpm;
   }
   calcAccuracy(tot, err) {
-    return Math.round(1 - err / tot);
+    return Math.round((1 - err / tot) * 10000) / 100;
   }
 }

@@ -1,11 +1,20 @@
 import Text from "./Text.js";
 import Shuffle from "../utils/Shuffle.js";
+import sampleParagraphs from "../utils/sampleParagraphs.js";
 
 export default class ParagraphManager {
   constructor() {
     this.localStorageKey = 'paragraphs';
-    if (!localStorage.getItem(this.localStorageKey)) {
+    // if localstorage doesn't have paragraphs item
+    if (localStorage.getItem(this.localStorageKey)) {
       this.saveToLocalStorage([]);
+    }
+    // if localstorage doesn't have any paragraph
+    const localParagraphs = localStorage.getItem(this.localStorageKey);
+    if (localParagraphs.length <= 2) {
+      sampleParagraphs.forEach(item => {
+        this.addParagraph(item);
+      });
     }
   }
   addParagraph(content) {
@@ -16,7 +25,6 @@ export default class ParagraphManager {
     const paragraphs = this.getParagraphs();
     const newParagraph = new Text({ content });
     paragraphs.push(newParagraph);
-    console.log(paragraphs);
     this.saveToLocalStorage(paragraphs);
   }
   getParagraphs() {
