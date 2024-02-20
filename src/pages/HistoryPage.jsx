@@ -6,7 +6,7 @@ export default class HistoryPage extends Component {
     return (
       <div className="App">
         <BaseBody>
-          <h1>History</h1>
+          <h1>Game History</h1>
         </BaseBody>
       </div>
     );

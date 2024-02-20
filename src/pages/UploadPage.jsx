@@ -16,6 +16,10 @@ export default class UploadPage extends Component {
     if (!paragraph || paragraph.length > 200) {
       return;
     }
+    if (this.state.paragraphs.length >= 100) {
+      alert('You can only upload a maximum of 100 paragraphs!');
+      return;
+    }
     this.pm.addParagraph(paragraph);
     this.updateParagraphs();
   };

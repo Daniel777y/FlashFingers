@@ -3,6 +3,7 @@ import BaseBody from "../templates/BaseBody";
 import GameInterface from "../components/GameInterface";
 
 import GameManager from "../models/GameManager.js";
+import "../styles/IndexPage.css";
 
 export default class IndexPage extends Component {
   constructor(props) {
@@ -62,7 +63,7 @@ export default class IndexPage extends Component {
               onInputChange={this.handleInput}
             />
           ) : (
-            <p>Press any key to start the game...</p>
+            <p className="start-game-msg">Press any key to start the game...</p>
           )}
         </BaseBody>
       </div>
