@@ -1,0 +1,14 @@
+.start-game-msg {
+  font-size: 1.5rem;
+  color: black;
+  text-align: center;
+  margin-top: 20vh;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+

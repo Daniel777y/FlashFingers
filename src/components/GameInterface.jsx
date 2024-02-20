@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import '../styles/GameInterface.css';
 
 export default class GameInterface extends Component {
+  inputRef = React.createRef();
   constructor(props) {
     super(props);
     this.state = {
@@ -25,6 +26,9 @@ export default class GameInterface extends Component {
       return <span key={index} className={className}>{char}</span>;
     });
   }
+  focusInput = () => {
+    this.inputRef.current.focus();
+  };
   render() {
     return (
 			<div className="game-container" onClick={this.focusInput}>
@@ -34,9 +38,9 @@ export default class GameInterface extends Component {
         <input
           type="text"
           className="game-input"
+          ref={this.inputRef}
           onChange={this.handleInputChange}
           value={this.props.game.userInput}
-          style={{ opacity: 0, position: 'absolute', width: '1px', height: '1px', border: 'none' }}
 					maxLength={this.props.game.text.content.length}
           autoFocus
         />
