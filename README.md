@@ -56,7 +56,7 @@ Welcome contributions to FlashFingers! If you have suggestions for improvements 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/Daniel777y/FlashFingers/blob/main/LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Daniel777y/FlashFingers/blob/main/LICENSE) file for details.
 
 ## Business Requirement
 
