@@ -1,7 +1,5 @@
 # FlashFingers
 
-## Introduction
-
 FlashFingers is a fun and interactive game to improve your typing speed and accuracy, offering immediate feedback on performance.
 
 ## Features
