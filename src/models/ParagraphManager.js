@@ -6,10 +6,11 @@ export default class ParagraphManager {
   constructor() {
     this.localStorageKey = 'paragraphs';
     // if localstorage doesn't have paragraphs item
-    if (localStorage.getItem(this.localStorageKey)) {
+    if (!localStorage.getItem(this.localStorageKey)) {
       this.saveToLocalStorage([]);
     }
     // if localstorage doesn't have any paragraph
+    // add some sample paragraphs
     const localParagraphs = localStorage.getItem(this.localStorageKey);
     if (localParagraphs.length <= 2) {
       sampleParagraphs.forEach(item => {
@@ -19,13 +20,18 @@ export default class ParagraphManager {
   }
   addParagraph(content) {
     if (!content || content.length > 200) {
+      alert('A paragraph cannot exceed 200 characters!');
       return;
     }
     // console.log("addParagraph", content);
-    const paragraphs = this.getParagraphs();
+    const paragraphs = this.restoreFromLocalStorage();
+    if (paragraphs.length >= 100) {
+      alert('You can only have upload a maximum of 100 paragraphs!');
+      return;
+    }
     const newParagraph = new Text({ content });
-    paragraphs.push(newParagraph);
-    this.saveToLocalStorage(paragraphs);
+    const newParagraphs = [...paragraphs, newParagraph];
+    this.saveToLocalStorage(newParagraphs);
   }
   getParagraphs() {
     return this.restoreFromLocalStorage();

@@ -13,18 +13,6 @@ export default class GameManager {
   }
   processInput(game, input) {
     const originalInput = game.userInput;
-    //newGame.userInput = input;
-    //if (newGame.userInput.length > game.userInput.length) {
-    //  newGame.pressCnt += 1;
-    //  const len = newGame.userInput.length;
-    //  if (newGame.userInput[len - 1] !== newGame.text.content[len - 1]) {
-    //    newGame.errorCnt += 1;
-    //  }
-    //}
-    //if (!newGame.completed) {
-    //  newGame.accuracy = this.calcAccuracy(newGame.pressCnt, newGame.errorCnt);
-    //  newGame.wpm = this.calcWPM(newGame.startTime, newGame.userInput);
-    //}
     const inputLen = input.length;
     const pressCnt = (input.length > originalInput.length ? game.pressCnt + 1 : game.pressCnt);
     const errorCnt = (input.length > originalInput.length && input[inputLen - 1] !== game.text.content[inputLen - 1] ? game.errorCnt + 1 : game.errorCnt);
@@ -38,16 +26,20 @@ export default class GameManager {
       accuracy,
       wpm,
     };
-    console.log(newGame.pressCnt, newGame.errorCnt);
+    //console.log(newGame.pressCnt, newGame.errorCnt);
     return newGame;
   }
   isCompleted(game) {
     return game.userInput === game.text.content;
   }
   endGame(game) {
-    game.endTime = Date.now();
-    game.completed = true;
     console.log(game.wpm, game.accuracy);
+    const newGame = {
+      ...game,
+      endTime: Date.now(),
+      completed: true,
+    };
+    return newGame;
   }
   calcWPM(startTime, input) {
     const currentTime = Date.now();
