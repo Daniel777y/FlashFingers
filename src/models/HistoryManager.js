@@ -10,18 +10,37 @@ export default class HistoryManager {
     }
   }
   addHistory(game) {
-    console.log(game);
+    //console.log(game);
     const newHistory = new History(game);
     const histories = this.restoreFromLocalStorage();
-    const newHistories = [...histories, newHistory];
-    console.log(histories, newHistory);
-    this.saveToLocalStorage(newHistories);
+    // make sure not exceed 100
+    if (histories.length >= 100) {
+      histories.shift();
+    }
+    this.saveToLocalStorage([...histories, newHistory]);
   }
   getHistories() {
     return this.restoreFromLocalStorage();
   }
-  clearHistories() {
+  clearHistory() {
     this.saveToLocalStorage([]);
+  }
+  calcAvgWPM() {
+    const histories = this.restoreFromLocalStorage();
+    if (histories.length === 0) {
+      return 0;
+    }
+    //console.log(histories);
+    const totWPM = histories.reduce((acc, item) => acc + item.wpm, 0);
+    return totWPM / histories.length;
+  }
+  calcAvgAccuracy() {
+    const histories = this.restoreFromLocalStorage();
+    if (histories.length === 0) {
+      return 100;
+    }
+    const totAccuracy = histories.reduce((acc, item) => acc + item.accuracy, 0);
+    return totAccuracy / histories.length;
   }
   restoreFromLocalStorage() {
     const historiesJSON = localStorage.getItem(this.localStorageKey);

@@ -21,21 +21,17 @@ export default class UploadParagraphForm extends Component {
     return (
       <div>
         <form action="/" onSubmit={this.onUpload}>
-          <div className="mb-1">
-            <label className="form-label">
-              Please enter your own text (no more than 200 characters):
-              <input
-                type="text"
-                className="form-control"
-                name="paragraph"
-                autoComplete="off"
-                required
-              />
-            </label>
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </div>
+          <label className="mb-1 form-label">
+            <p className="mt-2">Please enter your own text (no more than 200 characters):</p>
+            <input
+              type="text"
+              className="form-control"
+              name="paragraph"
+              autoComplete="off"
+              required
+            />
+          </label>
+          <button type="submit" className="btn btn-primary m-2">Submit</button>
         </form>
       </div>
     );

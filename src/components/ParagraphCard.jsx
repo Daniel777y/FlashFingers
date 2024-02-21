@@ -7,12 +7,10 @@ export default class ParagraphCard extends Component {
   }
   render() {
     return (
-      <div className="row">
-        <div className="card">
-          <div className="card-body">
-            <p className="card-text">{this.props.paragraph.content}</p>
-            <button className="btn btn-primary" onClick={this.props.onDelete}>Delete</button>
-          </div>
+      <div className="card mt-3">
+        <div className="card-body">
+          <p className="card-text">{this.props.paragraph.content}</p>
+          <button className="btn btn-primary" onClick={this.props.onDelete}>Delete</button>
         </div>
       </div>
     );

@@ -33,7 +33,7 @@ export default class GameManager {
     return game.userInput === game.text.content;
   }
   endGame(game) {
-    console.log(game.wpm, game.accuracy);
+    //console.log(game.wpm, game.accuracy);
     const newGame = {
       ...game,
       endTime: Date.now(),
