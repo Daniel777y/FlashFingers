@@ -31,7 +31,7 @@ Simply start typing the text that appears on the screen by pressing any key.
 
 The game offers endless, random paragraphs for continuous play.
 
-If you lost the focus accidently, please press the center area of the site.
+If you lost the focus accidentally, please press the center area of the site.
 
 You can upload your own paragraph in upload page, but you can only have a maximum of 100 paragraphs, and no more than 200 characters each.
 
@@ -56,7 +56,7 @@ Welcome contributions to FlashFingers! If you have suggestions for improvements 
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/Daniel777y/FlashFingers/blob/main/LICENSE.md) file for details.
 
 ## Business Requirement
 
