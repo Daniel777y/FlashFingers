@@ -39,6 +39,7 @@ export default class GameInterface extends Component {
       return <span key={index} className={className}>{char}</span>;
     });
   }
+  // focus on the input form
   focusInput = () => {
     this.inputRef.current.focus();
   };

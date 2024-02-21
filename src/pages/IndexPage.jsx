@@ -24,6 +24,7 @@ export default class IndexPage extends Component {
   componentWillUnmount() {
     document.removeEventListener("keypress", this.handleFirstPress);
   }
+  // The first press will start a game.
   handleFirstPress = (e) => {
     e.preventDefault();
     document.removeEventListener("keypress", this.handleFirstPress);
@@ -41,7 +42,6 @@ export default class IndexPage extends Component {
     const endedGame = this.gm.endGame(game);
     // save the ended game to history
     this.hm.addHistory(endedGame);
-    // update wpm and accuracy
   };
 	handleInput = (input) => {
     if (!this.state.gameStarted) {
@@ -51,8 +51,6 @@ export default class IndexPage extends Component {
     updatedGame = this.gm.processInput(updatedGame, input);
     if (this.gm.isCompleted(updatedGame)) {
       this.endGame(updatedGame);
-      //updatedGame = this.gm.endGame(updatedGame);
-      //this.hm.addHistory(updatedGame);
       // start a new game
       const newGame = this.gm.createGame();
       const startedGame = this.gm.startGame(newGame);
