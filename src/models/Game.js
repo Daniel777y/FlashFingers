@@ -13,4 +13,10 @@ export default class Game {
     this.userInput = '';
     this.completed = false;
   }
+  startGame() {
+    this.startTime = Date.now();
+  }
+  endGame() {
+    this.endTime = Date.now();
+  }
 }

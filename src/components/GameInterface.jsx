@@ -24,10 +24,12 @@ export default class GameInterface extends Component {
   handleInputChange = (e) => {
     this.props.onInputChange(e.target.value);
   }
+  // return text with colors
   renderText = (userInput, textContent) => {
     return textContent.split('').map((char, index) => {
       let className = 'text-default';
       if (index < userInput.length) {
+        // special handle for spaces
         if (char === ' ' && userInput[index] !== ' ') {
           return <span key={index} className="text-unmatch">&nbsp;</span>;
         } else {

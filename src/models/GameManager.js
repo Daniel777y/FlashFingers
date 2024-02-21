@@ -5,10 +5,17 @@ export default class GameManager {
   constructor() {
     this.pm = new ParagraphManager();
   }
-  startGame() {
+  createGame() {
     const text = this.pm.getRandomParagraph();
     const newGame = new Game(text);
-    newGame.startTime = Date.now();
+    return newGame;
+  }
+  startGame(game) {
+    const newGame = {
+      ...game,
+      startTime: Date.now(),
+      completed: false,
+    };
     return newGame;
   }
   processInput(game, input) {
@@ -18,6 +25,7 @@ export default class GameManager {
     const errorCnt = (input.length > originalInput.length && input[inputLen - 1] !== game.text.content[inputLen - 1] ? game.errorCnt + 1 : game.errorCnt);
     const accuracy = this.calcAccuracy(pressCnt, errorCnt);
     const wpm = this.calcWPM(game.startTime, input);
+    console.log(game, input, wpm, accuracy);
     const newGame = {
       ...game,
       userInput: input,

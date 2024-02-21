@@ -30,13 +30,10 @@ export default class IndexPage extends Component {
     this.startGame();
   };
   startGame = () => {
-    const newGame = this.gm.startGame();
-    if (!newGame.text) {
-      alert('You do not have any paragraphs, please upload some first.');
-      return;
-    }
+    const newGame = this.gm.createGame();
+    const startedGame = this.gm.startGame(newGame);
     this.setState({
-      currentGame: newGame,
+      currentGame: startedGame,
       gameStarted: true,
     });
   };
@@ -57,8 +54,9 @@ export default class IndexPage extends Component {
       //updatedGame = this.gm.endGame(updatedGame);
       //this.hm.addHistory(updatedGame);
       // start a new game
-      const newGame = this.gm.startGame();
-      this.setState({ currentGame: newGame });
+      const newGame = this.gm.createGame();
+      const startedGame = this.gm.startGame(newGame);
+      this.setState({ currentGame: startedGame });
     } else {
       this.setState({ currentGame: updatedGame });
     }
