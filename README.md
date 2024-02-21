@@ -1,6 +1,8 @@
 # FlashFingers
 FlashFingers is a typing game based on React, whose goals are to help players improve their typing speed and memorize words or paragraphs.
 
+Demo (please don't refresh): [FlashFingers](https://Daniel777y.github.io)
+
 ## Business Requirement
 
 ### Nouns & Verbs
@@ -120,3 +122,9 @@ In the history page, players can browse their game records, and they can also pl
 ## UML Class Diagram
 
 ![](./designImg/classUML.jpg)
+
+## Citation
+
+I used GPT4.0 for generating sample paragraphs.
+
+> prompt: I am creating a typing game. Specifically, I will provide paragraphs for users, and they will type those text. Please give me 20 paragraphs about whatever topics, and each of no more than 200 characters.
