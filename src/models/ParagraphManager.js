@@ -30,8 +30,7 @@ export default class ParagraphManager {
       return;
     }
     const newParagraph = new Text({ content });
-    const newParagraphs = [...paragraphs, newParagraph];
-    this.saveToLocalStorage(newParagraphs);
+    this.saveToLocalStorage([...paragraphs, newParagraph]);
   }
   getParagraphs() {
     return this.restoreFromLocalStorage();

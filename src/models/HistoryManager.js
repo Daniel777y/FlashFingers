@@ -30,7 +30,6 @@ export default class HistoryManager {
     if (histories.length === 0) {
       return 0;
     }
-    //console.log(histories);
     const totWPM = histories.reduce((acc, item) => acc + item.wpm, 0);
     return totWPM / histories.length;
   }
