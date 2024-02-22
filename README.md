@@ -2,6 +2,10 @@
 
 FlashFingers is a fun and interactive game to improve your typing speed and accuracy, offering immediate feedback on performance.
 
+[Business Requirment](https://github.com/Daniel777y/FlashFingers/blob/main/BusinessRequirement.md)
+
+[Video Introduction](https://youtu.be/nAP3YYFf4TI)
+
 ## Features
 
 * **Diverse Challenges**: Each game gives you different paragraphs to type, and you can also upload your own paragraphs.
@@ -9,10 +13,6 @@ FlashFingers is a fun and interactive game to improve your typing speed and accu
 * **Progress Tracking**: Keep track of your improvement over time with a history of your wpm and accuracy.
 
 ## Getting Started
-
-### Video Intro
-
-[FlashFingers: A typing Game by React.JS](https://youtu.be/nAP3YYFf4TI)
 
 ### Demo
 
@@ -61,10 +61,6 @@ Welcome contributions to FlashFingers! If you have suggestions for improvements 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/Daniel777y/FlashFingers/blob/main/LICENSE) file for details.
-
-## Business Requirement
-
-[Business Requirment](https://github.com/Daniel777y/FlashFingers/blob/main/BusinessRequirement.md)
 
 ## Citation
 
