@@ -10,9 +10,9 @@ FlashFingers is a fun and interactive game to improve your typing speed and accu
 
 ## Getting Started
 
-### Demo
+### Video Intro
 
-**(PLEASE DO NOT REFRESH!!!):**  [FlashFingers](https://Daniel777y.github.io)
+[FlashFingers: A typing Game by React.JS](https://youtu.be/nAP3YYFf4TI)
 
 ### Run on your local machine:
 
