@@ -137,7 +137,7 @@ In the history page, players can browse their game records, and they can also pl
 
 # UML Class Diagram
 
-![](./designImg/classUML.jpg)
+![](./designImg/uml.jpg)
 
 # Citation
 
