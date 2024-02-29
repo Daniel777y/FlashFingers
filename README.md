@@ -16,7 +16,7 @@ FlashFingers is a fun and interactive game to improve your typing speed and accu
 
 ### Demo
 
-[FlashFingers Github Page](Daniel777y.github.io)
+[FlashFingers Github Page](https://daniel777y.github.io/)
 
 ### Run on your local machine:
 
