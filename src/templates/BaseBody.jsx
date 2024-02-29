@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import HistoryManager from "../models/HistoryManager";
 
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 export default class BaseBody extends Component {
   constructor(props) {
@@ -30,6 +31,7 @@ export default class BaseBody extends Component {
       <div className="FlashFingers">
         <NavBar wpm={this.state.wpm} accuracy={this.state.accuracy} />
 				{this.props.children}
+        <Footer />
       </div>
     );
   }
